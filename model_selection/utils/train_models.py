@@ -101,12 +101,10 @@ def train_test_gbm(
     )
 
     train_groups = train.groupby('file_name').size().tolist()
-    test_groups = test.groupby('file_name').size().tolist()
 
     train_dataset = lightgbm.Dataset(train_x, label=train_y.squeeze(), group=train_groups)
-    test_dataset = lightgbm.Dataset(test_x, label=test_y.squeeze(), group=test_groups)
     gbm = lightgbm.train(
-        params, train_dataset, num_boost_round=100, valid_sets=[test_dataset],
+        params, train_dataset, num_boost_round=100, valid_sets=[train_dataset],
         callbacks=[lightgbm.log_evaluation, lightgbm.early_stopping(10, first_metric_only=False)]
     )
 
