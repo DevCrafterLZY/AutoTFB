@@ -1,0 +1,150 @@
+{
+  "Crossformer": {
+    "name": "Crossformer: Transformer Utilizing Cross-Dimension Dependency for Multivariate Time Series Forecasting",
+    "description": "Crossformer, a Transformer-based model that explicitly utilizes cross- dimension dependency for MTS forecasting. Specifically, we devise Dimension-Segment-Wise (DSW) embedding to process the historical time series. In DSW embedding, the series in each dimension is first partitioned into segments and then embedded into feature vectors. The output of DSW embedding is a 2D vector array where the two axes correspond to time and dimension. Then we propose the Two-Stage-Attention (TSA) layer to efficiently capture the cross-time and cross-dimension dependency among the 2D vector array. Using DSW embedding and TSA layer, Crossformer establishes a Hierarchical Encoder-Decoder (HED) for forecasting. In HED, each layer corresponds to a scale. The encoder’s upper layer merges adjacent segments output by the lower layer to capture the dependency at a coarser scale. Decoder layers generate predictions at different scales and add them up as the final prediction. "
+  },
+  "DLinear": {
+    "name": "DLinear",
+    "description": "It is a combination of a Decomposition scheme used in Autoformer and FEDformer with linear layers. It first decomposes a raw data input into a trend component by a moving average kernel and a remainder (seasonal) component. Then, two one-layer linear layers are applied to each component and we sum up the two features to get the final prediction. By explicitly handling trend, DLinear enhances the performance of a vanilla linear when there is a clear trend in the data."
+  },
+  "DUET": {
+    "name": "DUET: Dual Clustering Enhanced Multivariate Time Series Forecasting",
+    "description": "DUET, which introduces a DUal clustering on the temporal and channel dimensions to Enhance multivariate Time series forecasting. Specifically, it clusters sub-series into fine-grained distributions with the TCM to better model the heterogeneity of temporal patterns. It also utilizes a Channel-Soft-Clustering strategy and captures the relationships among channels with the CCM. Euipped with the dual clustering mechanism, DUET rationally harnesses the spectrum of information from both the temporal and channel dimensions, thus forecasting more accruately."
+  },
+  "FEDformer": {
+    "name": "FEDformer: Frequency Enhanced Decomposed Transformer for Long-term Series Forecasting",
+    "description": "FEDformer (Frequency Enhanced Decomposition Transformer) is a model for long-term time series forecasting that integrates seasonal-trend decomposition and Fourier analysis with Transformer. It decomposes time series into seasonal and trend components, improving prediction alignment with the ground truth distribution. By applying Fourier analysis in the frequency domain instead of the time domain, it captures global properties and periodic behaviors of time series, enhancing accuracy. FEDformer selects both low and high-frequency components, preserving critical information about trend changes and events. Additionally, it reduces Transformer’s computational complexity from quadratic to linear, improving scalability without compromising performance."
+  },
+  "FITS": {
+    "name": "FITS: Frequency Interpolation Time Series Forecasting",
+    "description": "FITS (Frequency Interpolation Time Series Analysis Baseline) is a lightweight model designed for time series analysis, particularly suited for resource-constrained edge devices like smart sensors with limited computational and memory resources. FITS leverages the frequency domain to efficiently represent time series data, using complex-valued neural networks that capture both amplitude and phase information, a capability often underutilized in traditional models. By transforming time series data into the complex frequency domain via rFFT (real Fast Fourier Transform) and performing frequency interpolation, FITS extends the time series segment for forecasting or reconstructs it for anomaly detection. Its architecture, which includes a low-pass filter, ensures a compact yet effective representation."
+  },
+  "FiLM": {
+    "name": "FiLM: Frequency Improved Legendre Memory model",
+    "description": "FiLM (Frequency Improved Legendre Memory model) is a model designed for long-term time series forecasting that aims to address the challenge of preserving historical information while minimizing the impact of noisy signals. The model integrates the Legendre projection, which is used in the Recursive Memory Unit (LMU), to update time series representations with fixed-size vectors dynamically. However, to prevent overfitting caused by noisy data, FiLM introduces a combination of Fourier analysis and low-rank matrix approximation. This approach preserves important low-frequency components and top eigenspaces while removing noise. The core of FiLM consists of two main components: the redesigned Legendre Projection Unit (LPU), which serves as a general tool for data representation, and the Frequency Enhanced Layers (FEL), which apply dimensionality reduction through Fourier analysis to combat overfitting."
+  },
+  "Informer": {
+    "name": "Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting",
+    "description": "Informer is a model designed to enhance prediction capacity for long-sequence time-series forecasting (LSTF) by addressing key limitations in Transformer models. It introduces a ProbSparse self-attention mechanism, which reduces the time and memory complexity of self-attention from O(L²) to O(L log L), making it more efficient for long sequences. Additionally, self-attention distilling is used to prioritize the most significant attention scores, improving prediction performance without increasing computational cost. This allows Informer to handle long-range dependencies effectively, while maintaining both efficiency and scalability, addressing the challenges of memory bottleneck and slow inference associated with traditional Transformer models."
+  },
+  "MICN": {
+    "name": "MICN: Multi-scale Local and Global Context Modeling for Long-term Series Forecasting",
+    "description": "The Multi-scale Isometric Convolution Network (MICN) employs multiple branches with different convolution kernels to model various potential pattern information of the sequence separately. Each branch extracts local features of the sequence using a local module based on downsampling convolution. On top of this, the global correlation is modeled using a global module based on isometric convolution. Finally, a Merge operation is used to fuse information from different patterns across the branches. This design reduces both time and space complexity to linearity, eliminating unnecessary and redundant calculations."
+  },
+  "NLinear": {
+    "name": "NLinear",
+    "description": "To boost the performance of Linear when there is a distribution shift in the dataset, NLinear first subtracts the input by the last value of the sequence. Then, the input goes through a linear layer, and the subtracted part is added back before making the final prediction. The subtraction and addition in NLinear are a simple normalization for the input sequence."
+  },
+  "Nonstationary_Transformer": {
+    "name": "Non-stationary Transformers: Exploring the Stationarity in Time Series Forecasting",
+    "description": "Non-stationary Transformers explore the effect of stationarization in time series forecasting and provide a general framework that enhances the predictive ability of Transformer models and their efficient variants for real-world time series. The framework consists of two interdependent modules: Series Stationarization, which increases the predictability of non-stationary series, and De-stationary Attention, which alleviates over-stationarization. Series Stationarization employs a simple yet effective normalization strategy to unify the key statistics of each series without the need for extra parameters. De-stationary Attention approximates the attention of unstationarized data and compensates for the intrinsic non-stationarity of raw series. These designs allow Non-stationary Transformers to leverage the strong predictability of stationarized series while preserving the crucial temporal dependencies discovered from the original non-stationary data."
+  },
+  "PDF": {
+    "name": "PDF: Periodicity Decoupling Framework for Long-term Series Forecasting",
+    "description": "The Periodicity Decoupling Framework (PDF) is introduced to capture 2D temporal variations of decoupled series for long-term series forecasting. PDF consists of three main components: the multi-periodic decoupling block (MDB), the dual variations modeling block (DVMB), and the variations aggregation block (VAB). Unlike previous methods that focus on 1D temporal variations, PDF primarily models 2D temporal variations, which are decoupled from 1D time series by the MDB. The DVMB then captures both short-term and long-term variations, followed by the VAB to make the final predictions. Extensive experimental results across seven real-world long-term time series datasets demonstrate the superiority of PDF over other state-of-the-art methods in terms of forecasting performance and computational efficiency."
+  },
+  "PatchTST": {
+    "name": "PatchTST: channel-independent patch time series Transformer",
+    "description": "PatchTST proposes an efficient design for Transformer-based models tailored to multivariate time series forecasting and self-supervised representation learning. This design includes two core elements: (i) segmentation of time series into subseries-level patches, which act as input tokens for the Transformer, and (ii) channel-independence, where each channel is a univariate time series sharing the same embedding and Transformer weights across all channels. The patching approach yields three advantages: it preserves local semantic information in the embedding, decreases the computation and memory consumption of attention maps quadratically for the same look-back window, and allows the model to consider longer historical data."
+  },
+  "Pathformer": {
+    "name": "Pathformer: Multi-scale Transformers with Adaptive Pathways for Time Series Forecasting",
+    "description": "Pathformer is a multi-scale Transformer with adaptive pathways, designed to integrate both temporal resolution and temporal distance for effective multi-scale modeling. The time series is divided into different temporal resolutions using patches of varying sizes. Dual attention is then applied across these patches to capture both global correlations and local details as temporal dependencies. Additionally, Pathformer enhances the multi-scale Transformer with adaptive pathways that adjust the multi-scale modeling process based on the changing temporal dynamics of the input, thereby improving the model's accuracy and generalization."
+  },
+  "RNNModel": {
+    "name": "RNN: Recurrent Neural Network",
+    "description": "Recurrent Neural Networks (RNNs) are a class of neural networks designed for sequence data. Unlike traditional feedforward networks, RNNs have connections that loop back, allowing them to maintain a memory of previous inputs. This makes them well-suited for tasks like time series prediction, natural language processing, and speech recognition. RNNs process data step-by-step, using the output from previous steps as part of the input for the next, enabling them to capture temporal dependencies in sequences."
+  },
+  "RegressionModel": {
+    "name": "Regression Model",
+    "description": "Linear Regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables by fitting a linear equation to the observed data. The model assumes a straight-line relationship, where the output is a weighted sum of the input features plus a bias term. It is widely used for prediction and trend analysis. Linear Regression is simple to implement and computationally efficient, but it assumes linearity and may not perform well on complex, non-linear data."
+  },
+  "TCNModel": {
+    "name": "TCN: Temporal Convolutional Networks",
+    "description": "Temporal Convolutional Networks (TCN) are designed to model sequential data using convolutional layers. They utilize causal convolutions, ensuring that the prediction only depends on the current and past inputs. TCNs employ dilated convolutions to efficiently capture long-range dependencies by increasing the receptive field without increasing computational cost. "
+  },
+  "TimeMixer": {
+    "name": "TimeMixer: Decomposable Multiscale Mixing for Time Series Forecasting",
+    "description": "TimeMixer is a fully MLP-based architecture designed to leverage disentangled multiscale time series in both the past extraction and future prediction phases. It incorporates two key components: Past-Decomposable-Mixing (PDM) and Future-Multipredictor-Mixing (FMM) blocks. PDM decomposes the multiscale series into seasonal and trend components, then mixes them in fine-to-coarse and coarse-to-fine directions. This approach aggregates both microscopic seasonal and macroscopic trend information effectively. FMM enhances forecasting by combining multiple predictors, thus utilizing complementary forecasting capabilities across different scales of observation."
+  },
+  "TimesNet": {
+    "name": "TimesNet: Temporal 2D-Variation Modeling for General Time Series Analysis",
+    "description": "TimesNet is a model designed to analyze time series data by addressing the multi-periodicity and complex temporal variations present in such data. The model extends the representation of temporal variations from 1D to 2D by transforming the original time series into 2D tensors, based on multiple periods. This transformation enables the embedding of both intraperiod and interperiod variations into the rows and columns of the tensors, making them more accessible for modeling using 2D kernels. The core component of TimesNet is the TimesBlock, a task-general backbone that adaptively discovers multi-periodicity and extracts complex temporal variations from the 2D tensors. This is achieved through a parameter-efficient inception block, ensuring effective and scalable time series analysis."
+  },
+  "Triformer": {
+    "name": "Triformer: Triangular, Variable-Specific Attentions for Long Sequence Multivariate Time Series Forecasting",
+    "description": "Triformer is a lightweight method designed to capture distinct temporal patterns for different variables in multivariate time series forecasting. The model introduces variable-specific parameters, such as unique sets of matrices for each variable, allowing it to capture the individual temporal characteristics of each. The approach factorizes projection matrices into variable-agnostic and variable-specific components, ensuring shared parameters across variables while keeping the variable-specific matrices compact to avoid expanding the parameter space and computational overhead. Triformer incorporates a novel attention mechanism, Patch Attention, with a triangular, multi-layer structure, ensuring overall linear complexity and high efficiency. "
+  },
+  "iTransformer": {
+    "name": "iTransformer: Inverted Transformers Are Effective for Time Series Forecasting",
+    "description": "iTransformer is a model that applies attention and feed-forward networks on the inverted dimensions of multivariate time series data. In this design, the time points of individual series are transformed into variate tokens. These tokens are processed by the attention mechanism to capture multivariate correlations, while the feed-forward network is applied to each variate token to learn nonlinear representations. This approach enables efficient modeling of temporal dependencies and interactions across different variables."
+  },
+  "AutoARIMA": {
+    "name": "AutoARIMA",
+    "description": "AutoARIMA returns the best ARIMA model based on the lowest value of AIC, AICc, or BIC. It performs a search over possible models within the specified order constraints (p, d, q) to identify the optimal configuration for the time series data."
+  },
+  "BlockRNNModel": {
+    "name": "Block Recurrent Neural Networks",
+    "description": "A Block Recurrent Neural Network (RNN) is a model that processes sequential data by using an RNN encoder to encode fixed-length input chunks. The encoded information is then passed through a fully connected network to produce fixed-length outputs."
+  },
+  "KalmanForecaster": {
+    "name": "Kalman Filter Forecaster",
+    "description": "A model producing stochastic forecasts based on the Kalman filter. The filter is first optionally fitted on the series (using the N4SID identification algorithm), and then run on future time steps in order to obtain forecasts."
+  },
+  "Linear": {
+    "name": "Linear Layer",
+    "description": "Just one Linear layer."
+  },
+  "LinearRegressionModel": {
+    "name": "Linear Regression Model",
+    "description": "Linear Regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables by fitting a linear equation to the observed data. The model assumes a straight-line relationship, where the output is a weighted sum of the input features plus a bias term. It is widely used for prediction and trend analysis. Linear Regression is simple to implement and computationally efficient, but it assumes linearity and may not perform well on complex, non-linear data."
+  },
+  "NaiveDrift": {
+    "name": "Naive Drift",
+    "description": "This model fits a line between the first and last point of the training series, and extends it in the future."
+  },
+  "NaiveMean": {
+    "name": "Naive Mean",
+    "description": "This model predicts the mean of the training series for all future time steps."
+  },
+  "NaiveSeasonal": {
+    "name": "Naive Seasonal",
+    "description": "This model always predicts the value of `K` time steps ago. When `K=1`, this model predicts the last value of the training set. When `K>1`, it repeats the last `K` values of the training set."
+  },
+  "NaiveMovingAverage": {
+    "name": "Naive Moving Average",
+    "description": "This model forecasts using an auto-regressive moving average (ARMA)."
+  },
+  "NBEATSModel": {
+    "name": "N-BEATS: Neural Basis Expansion Analysis Time Series Forecasting",
+    "description": "N-BEATS is a deep learning model designed for time series forecasting. It is a neural network architecture that leverages feedforward networks to model complex temporal patterns without requiring domain-specific features. N-BEATS consists of two main components: trend and seasonality blocks, which capture long-term trends and periodic patterns in the data."
+  },
+  "NHiTSModel": {
+    "name": "N-HiTS: Neural Hierarchical Interpolation for Time Series Forecasting",
+    "description": "N-HiTS is a novel architecture for long-horizon forecasting that improves computational efficiency and accuracy. It introduces multi-rate data sampling to reduce memory and computation while maintaining long-range dependency modeling. Additionally, hierarchical interpolation smooths multi-step predictions by aligning the output's time scale with the final forecast."
+  },
+  "RandomForest": {
+    "name": "Random Forest",
+    "description": "Random Forest for time series forecasting is an ensemble learning method that builds multiple decision trees to model the relationships between past observations and future values. It creates a robust model by averaging the predictions of many trees, which helps reduce overfitting and improve accuracy. While not inherently designed for sequential data, Random Forest can be adapted for time series by transforming the data into a supervised learning problem, using lagged observations as input features. "
+  },
+  "StatsForecastAutoETS": {
+    "name": "AutoETS: Automatic Exponential Smoothing model",
+    "description": "AutoETS is an automatic Exponential Smoothing (ETS) model for time series forecasting. It automatically selects the best ETS model by optimizing an information criterion, typically Akaike Information Criterion (AICc). The model is based on state-space equations that can be defined with different components for error (E), trend (T), and seasonality (S), using additive or multiplicative forms."
+  },
+  "StatsForecastAutoTheta": {
+    "name": "AutoTheta: Automatic Exponential Smoothing model",
+    "description": "AutoTheta is an automated time series forecasting model that selects the best Theta model based on minimizing the mean squared error (MSE). It includes several variations of the Theta model, such as the Standard Theta Model (STM), Optimized Theta Model (OTM), Dynamic Standard Theta Model (DSTM), and Dynamic Optimized Theta Model (DOTM). "
+  },
+  "StatsForecastAutoCES": {
+    "name": "AutoCES: Automatic Complex Exponential Smoothing model",
+    "description": "AutoCES is an automated Complex Exponential Smoothing (CES) model for time series forecasting. It selects the best CES model by optimizing an information criterion, typically the Akaike Information Criterion (AICc). The model is estimated using maximum likelihood, with the state-space equations defined by various components such as simple (SS), partial (PP), optimized (ZZ), or omitted (NN). Users can define the model type using parameters: NN for simple CES (no seasonality), SS for simple seasonality, PP for partial seasonality, and FF for full seasonality, which includes both real and complex seasonal components."
+  },
+  "TiDEModel": {
+    "name": "TiDE: Time-series Dense Encoder",
+    "description": "TiDE (Time-series Dense Encoder) is a model architecture designed for long-term time series forecasting. It uses dense Multi-Layer Perceptrons (MLPs) to encode past time series data along with covariates, and then decodes the time series along with future covariates, also using dense MLPs."
+  },
+  "XGBModel": {
+    "name": "Regression model based on XGBoost",
+    "description": "The Regression model based on XGBoost for time series forecasting leverages the power of gradient boosting to predict future values by learning from historical data. It builds a series of decision trees that sequentially correct previous errors, making it well-suited for capturing complex, non-linear relationships in time series data. "
+  }
+}

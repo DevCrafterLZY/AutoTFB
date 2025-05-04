@@ -1,0 +1,17 @@
+ENSEMBLE_MODELS = [
+    "PatchTST",
+    "NLinear",
+    "Triformer",
+    "TimesNet",
+    "Informer",
+    "FiLM",
+    "FEDformer",
+    "DLinear",
+    "Crossformer",
+    "Linear",
+    "Nonstationary_Transformer",
+    "RandomForest",
+    "NaiveMovingAverage",
+    "LinearRegressionModel",
+    "NaiveDrift",
+]

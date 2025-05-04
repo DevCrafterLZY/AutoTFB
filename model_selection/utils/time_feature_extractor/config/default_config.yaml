@@ -1,0 +1,28 @@
+general:
+  gpu: 0
+  seed: 301
+  max_threads: null
+  exp_id: 1
+
+
+data:
+  dataset_algorithm_path: "dataset_algorithm.npy"
+  datasets_train_path: "datasets_train"
+  datasets_all_path: "datasets_all"
+  sample_num: 48
+  max_pred_len: 24
+
+
+model:
+  repr_dims: 320
+  max_train_length: 3000
+  lr: 0.001
+  batch_size: 8
+  num_epochs: 50
+  num_iters: null
+  save_every: null
+
+feature_extraction:
+  sliding_length: 1
+  sliding_padding: 2
+  batch_size: 256
