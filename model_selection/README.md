@@ -1,4 +1,4 @@
-# AutoTFB: Benchmarking and Automation for Time Series Forecasting
+# AutoTFB
 
 ## Introduction
 
@@ -27,17 +27,6 @@ Given a python environment (**note**: this project is fully tested under **pytho
 pip install -r requirements.txt
 ```
 
-- From Docker
-
-We also provide a [Dockerfile](https://github.com/decisionintelligence/TFB/blob/master/Dockerfile) for you. For this setup to work you need to have a Docker service installed. You can get it at [Docker website](https://docs.docker.com/get-docker/).
-
-```shell
-docker build . -t tfb:latest
-```
-
-```shell
-docker run -it -v $(pwd)/:/app/ tfb:latest bash
-```
 
 2. Data preparation:
 
@@ -52,11 +41,11 @@ sh ./scripts/multivariate_forecast/ILI_script/DLinear.sh
 ```
 
 ## Steps to develop your own method
-We provide tutorial about how to develop your own method, you can [click here](./docs/tutorials/steps_to_develop_your_own_method.md).
+We provide tutorial about how to develop your own method, you can [click here](../docs/tutorials/steps_to_develop_your_own_method.md).
 
 
 ## Steps to evaluate on your own time series
-We provide tutorial about how to evaluate on your own time series, you can [click here](./docs/tutorials/steps_to_evaluate_your_own_time_series.md).
+We provide tutorial about how to evaluate on your own time series, you can [click here](../docs/tutorials/steps_to_evaluate_your_own_time_series.md).
 
 ## Time series code bug the drop-last illustration
 Implementations of existing methods often  employ a “Drop Last” trick in the testing phase. To accelerate the testing, it is common to split the data into batches. However, if we discard the last incomplete batch with fewer instances than the batch size, this causes unfair comparisons. For example, in Figure 4, the ETTh2 has a testing series of length 2,880, and we need to predict 336 future time steps using a look-back window of size 512. If we select the batch sizes to be 32, 64, and 128, the number of samples in the last batch are 17, 49, and 113, respectively. **Unless all methods use the same batch size, discarding the last batch of test samples is unfair, as the actual usage length of the test set is inconsistent.** Table 2 shows the testing results of PatchTST, DLinear, and FEDformer on the ETTh2 with different batch sizes and the “Drop Last” trick turned on. **We observe that the performance of the methods changes when varying the batch size.**
