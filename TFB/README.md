@@ -5,6 +5,11 @@
 We provide a clean codebase for end-to-end evaluation of time series forecasting models, comparing their performance
 with baseline algorithms under various evaluation strategies and metrics.
 
+The below figure provides a visual overview of TFB's pipeline.
+<div align="center">
+<img alt="Logo" src="../docs/figures/Pipeline.png" width="80%"/>
+</div>
+
 ## Quickstart
 
 1. Installation:
@@ -40,12 +45,12 @@ sh ./scripts/multivariate_forecast/ILI_script/DLinear.sh
 ## Steps to develop your own method
 
 We provide tutorial about how to develop your own method, you
-can [click here](./docs/tutorials/steps_to_develop_your_own_method.md).
+can [click here](../docs/tutorials/steps_to_develop_your_own_method.md).
 
 ## Steps to evaluate on your own time series
 
 We provide tutorial about how to evaluate on your own time series, you
-can [click here](./docs/tutorials/steps_to_evaluate_your_own_time_series.md).
+can [click here](../docs/tutorials/steps_to_evaluate_your_own_time_series.md).
 
 ## Time series code bug the drop-last illustration
 
@@ -62,5 +67,5 @@ batch size.**
 **Therefore, AutoTFB calls for the testing process to avoid using the drop-last operation to ensure fairness, and
 AutoTFB did not use the drop-last operation during testing either.**
 <div align="center">
-<img alt="Logo" src="docs/figures/Drop-last.png" width="70%"/>
+<img alt="Logo" src="../docs/figures/Drop-last.png" width="70%"/>
 </div>

@@ -19,11 +19,6 @@ The below figure provides a visual overview of AutoTFB.
 <img alt="Logo" src="docs/figures/Pipeline.png" width="80%"/>
 </div>
 
-![image-20240514151134923](todo)todo
-
-
-## Quickstart
-
 ## Quickstart
 
 This project consists of two main components: **TFB** and **AutoTFB**. You can get started by referring to the following documents:
