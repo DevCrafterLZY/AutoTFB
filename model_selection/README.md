@@ -31,13 +31,14 @@ You can obtained the well pre-processed datasets
 from [Google Drive](https://drive.google.com/file/d/12LLOC6ThtlAbLu0LseW2eQeSXBJNbJH4/view?usp=sharing). Then place the
 downloaded data under the folder `./dataset`.
 
-3. Train and evaluate model:
+### 3. Train and evaluate the model
 
-We provide the scripts under the folder `./scripts/multivariate`, and `./scripts/univariate`. For example you can
-reproduce a experiment result as the following:
+We provide training and evaluation scripts under the folders `./scripts/multivariate` and `./scripts/univariate`.  
+For example, you can reproduce an experimental result by running:
 
-```shell
+```bash
 sh ./scripts/multivariate_forecast/mae.sh
 ```
 
-
+The result will be saved in a CSV file. The `predict_{metric}` column represents the recommended score — for the same
+dataset, a higher score indicates a stronger recommendation for the corresponding model.
