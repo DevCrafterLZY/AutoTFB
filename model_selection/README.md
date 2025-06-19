@@ -5,7 +5,10 @@
 We provide a automated time series forecasting framework which via both model selection and model ensemble.
 
 Here is the model selection pipeline. The implementation code for model ensemble is located in
-the [ensemble](./TFB/ts_benchmark/baselines/ensemble/ensemble.py) directory.
+the [ensemble](./TFB/ts_benchmark/baselines/ensemble/ensemble.py) directory. We also provide ready-to-use scripts that
+perform ensemble using the top-k models selected by the model selection module. You can find these scripts
+in [this directory](../TFB/scripts/multivariate_forecast_ensemble) and [this one](../TFB/scripts/univariate_forecast),
+and run them directly through TFB.
 
 The below figure provides a visual overview of AutoTFB's automated time series forecasting framework.
 <div align="center">
