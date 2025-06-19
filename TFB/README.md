@@ -33,7 +33,8 @@ the downloaded data under the folder `./dataset`.
 
 We provide the experiment scripts for all benchmarks under the folder `./scripts/multivariate_forecast`,
 and `./scripts/univariate_forecast`.
-We also provide an AutoTFB ensemble script built upon the results of model selection under the folder `./scripts/multivariate_forecast_ensemble`,
+We also provide an AutoTFB ensemble script built upon the results of model selection under the
+folder `./scripts/multivariate_forecast_ensemble`,
 and `./scripts/univariate_forecast_ensemble`.
 
 For example you can run a experiment as the following:
