@@ -24,7 +24,7 @@ This project consists of two main components: **TFB** and **AutoTFB**. You can g
 documents:
 
 - **TFB**: For TSF benchmark, see [here](TFB/README.md).
-- **AutoTFB**: For automated forecasting framework, see [here](model_selection/README.md).
+- **AutoTFB**: For automated forecasting framework, see [here](AutoTFB/README.md).
 
 
 
