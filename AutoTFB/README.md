@@ -12,7 +12,7 @@ and run them directly through TFB.
 
 The below figure provides a visual overview of AutoTFB's automated time series forecasting framework.
 <div align="center">
-<img alt="Logo" src="../docs/figures/Pipeline.png" width="80%"/>
+<img alt="Logo" src="../docs/figures/AutoTFB.png" width="80%"/>
 </div>
 
 ## Quickstart

@@ -15,7 +15,7 @@ The below figure provides a visual overview of TFB.
 The below figure provides a visual overview of AutoTFB.
 
 <div align="center">
-<img alt="Logo" src="docs/figures/Pipeline.png" width="80%"/>
+<img alt="Logo" src="docs/figures/AutoTFB.png" width="80%"/>
 </div>
 
 ## Quickstart
